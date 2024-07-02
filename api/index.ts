@@ -1,5 +1,4 @@
-import express, {Request, Response} from 'express';
-import {Message} from '../index'
+import express, {Request, Response} from 'express'
 import geoip from 'geoip-lite'
 import dotenv from 'dotenv'
 
@@ -16,7 +15,7 @@ app.get('/', (req: Request, res: Response) => {
 
 
 app.get('/api/hello', async (req: Request, res: Response)=>{
-    const message:Message = {
+    const message = {
         client_ip: '',
         location: '',
         greeting: '',
