@@ -25,6 +25,6 @@ and returns json in the format.
 # Development
 
 you can fork the code  
-run npm i -g vercel
-run npm dev //to start local development server
+run npm i -g vercel  
+run npm dev //to start local development server  
 run vercel //to deploy
