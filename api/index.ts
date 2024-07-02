@@ -66,7 +66,7 @@ app.get('/api/hello', async (req, res)=>{
 })
 
 app.listen(8080, () => {
-    console.log(`Server is running at http://localhost:${port}`);
+    console.log(`Server is running at http://localhost:8080`);
 });
 
 module.exports = app
