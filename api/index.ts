@@ -41,7 +41,7 @@ app.get('/api/hello', async (req: Request, res: Response)=>{
         return
     }
 
-    message.location = geo.city;
+    message.location = geo.city||'';
     const lat = geo.lat,
     lon = geo.lon,
     apiKey = process.env.API_KEY,
@@ -58,7 +58,7 @@ app.get('/api/hello', async (req: Request, res: Response)=>{
         return ''
     });
     
-    message.greeting = `Hello, ${name}! the temperature is ${temperature} degrees Celcius in ${city}`
+    message.greeting = `Hello, ${name}! the temperature is ${temperature} degrees Celcius in ${geo.city||''}`
 
     res.json(message);
 
