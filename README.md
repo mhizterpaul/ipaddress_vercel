@@ -1,6 +1,6 @@
 # API
 
-available at [domain]: http://ipaddress.eu-4.evennode.com
+available at [domain]: https://ipaddress-rho.vercel.app
 
 ## Description
 
@@ -18,13 +18,13 @@ and returns json in the format.
 
 ## Usage 
 
-* example: http://ipaddress.eu-4.evennode.com/api/hello?visitor_name=my_name
+* example: https://ipaddress-rho.vercel.app/api/hello?visitor_name=my_name
 
 * replace my name with your name
 
 # Development
 
 you can fork the code  
-run npm install  
-run npm dev //to start the development server  
-run npm build //to compile the code 
+run npm i -g vercel
+run npm dev //to start local development server
+run vercel //to deploy
