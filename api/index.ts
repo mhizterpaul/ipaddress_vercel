@@ -1,20 +1,19 @@
-import express, {Request, Response} from 'express'
-import geoip from 'geoip-lite'
-import dotenv from 'dotenv'
+const express = require('express');
+const geoip = require('geoip-lite');
+const dotenv = require('dotenv');
 
 
 const app = express();
-const port = process.env.PORT || 8080;
 dotenv.config();
 
 app.set('trust proxy', true);
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (req, res) => {
     res.send('Hello!');
 });
 
 
-app.get('/api/hello', async (req: Request, res: Response)=>{
+app.get('/api/hello', async (req, res)=>{
     const message = {
         client_ip: '',
         location: '',
@@ -66,7 +65,7 @@ app.get('/api/hello', async (req: Request, res: Response)=>{
 
 })
 
-app.listen(port, () => {
+app.listen(8080, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
 
