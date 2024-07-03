@@ -35,13 +35,13 @@ app.get('/api/hello', async (req: Request, res: Response)=>{
 
     message.client_ip = ip;
 
-    if(!geo){
+    if(!geo.city){
         message.greeting = `Hello, ${name}!`
         res.json(message);
         return
     }
 
-    message.location = geo.city||'';
+    message.location = geo.city;
     const lat = geo.lat,
     lon = geo.lon,
     apiKey = process.env.API_KEY,
@@ -58,7 +58,7 @@ app.get('/api/hello', async (req: Request, res: Response)=>{
         return ''
     });
     
-    message.greeting = `Hello, ${name}! the temperature is ${temperature} degrees Celcius in ${geo.city||''}`
+    message.greeting = `Hello, ${name}! the temperature is ${temperature} degrees Celcius in ${geo.city}`
 
     res.json(message);
 
@@ -67,5 +67,3 @@ app.get('/api/hello', async (req: Request, res: Response)=>{
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
-
-module.exports = app
